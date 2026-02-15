@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Edinburgh_accommodation</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Points on a map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v3.17.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.tiles.mapbox.com/mapbox-gl-js/v3.17.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.1.0/mapbox-gl-geocoder.css"
+      type="text/css"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.1.0/mapbox-gl-geocoder.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="map"></div>
+
+    <div class="map-overlay" id="features">
+      <h2>Edinburgh Hotel Map</h2>
+      <p class="source">
+        Hotel data: OpenStreetMap contributors (via Overpass API, licensed under
+        ODbL)
+      </p>
+      <p class="source">Extraction date: February 2026</p>
+    </div>
+
+    <div class="ui">
+      <div class="filters">
+        <div class="filter-wrap type-wrap">
+          <button class="filter-btn type-btn" type="button">
+            Filter by hotel type ▾
+          </button>
+
+          <div class="filter-panel type-panel is-hidden">
+            <div class="filter-title">Hotel type</div>
+
+            <label class="filter-item">
+              <input type="radio" name="hotelType" value="all" checked />
+              All
+            </label>
+            <label class="filter-item">
+              <input type="radio" name="hotelType" value="hotel" />
+              hotel
+            </label>
+            <label class="filter-item">
+              <input type="radio" name="hotelType" value="hostel" />
+              hostel
+            </label>
+            <label class="filter-item">
+              <input type="radio" name="hotelType" value="guest_house" />
+              guest_house
+            </label>
+            <label class="filter-item">
+              <input type="radio" name="hotelType" value="apartment" />
+              apartment
+            </label>
+          </div>
+        </div>
+
+        <div class="filter-wrap dest-wrap">
+          <button class="filter-btn dest-btn" type="button">
+            Filter by destination ▾
+          </button>
+
+          <div class="filter-panel dest-panel is-hidden">
+            <div class="filter-title">Destination</div>
+
+            <label class="filter-item">
+              <select class="dest-select">
+                <option value="none" selected>All destinations</option>
+                <option value="-3.1889,55.9533">Waverley Station</option>
+                <option value="-3.2186,55.94551">Haymarket Station</option>
+                <option value="-3.18851,55.95536">St James Quarter</option>
+                <option value="-3.1999,55.94864">Edinburgh Castle</option>
+                <option value="-3.18801,55.95015">Royal Mile</option>
+                <option value="-3.19322,55.94877">
+                  Victoria Street (Rainbow Street)
+                </option>
+                <option value="-3.18278,55.95541">Calton Hill</option>
+                <option value="-3.19056,55.94716">
+                  National Museum of Scotland
+                </option>
+                <option value="-3.19562,55.9509">
+                  Scottish National Gallery
+                </option>
+                <option value="-3.18919,55.94467">
+                  University of Edinburgh
+                </option>
+                <option value="-3.19322,55.95253">Scott Monument</option>
+                <option value="-3.17247,55.95279">Holyrood Palace</option>
+              </select>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-count">Hotels shown: 0</div>
+      <button class="download-btn" type="button">Download filtered data</button>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
